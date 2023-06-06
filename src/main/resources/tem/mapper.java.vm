@@ -2,6 +2,7 @@ package ${package.Mapper};
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import ${package.Entity}.${entity};
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -12,7 +13,7 @@ import javax.annotation.Resource;
  * @author ${author}
  * @since ${date}
  */
-@Repository
+@Mapper
 public interface ${table.mapperName} extends BaseMapper<${entity}> {
 
 }

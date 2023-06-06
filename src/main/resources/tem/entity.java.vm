@@ -1,6 +1,5 @@
 package ${package.Entity};
 //needUpdate
-import com.wen.oawxapi.entity;
 
 #foreach($pkg in ${table.importPackages})
 import ${pkg};
@@ -19,6 +18,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.apache.ibatis.type.Alias;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 
 /**
  * $!{table.comment}
@@ -39,7 +39,7 @@ import org.apache.ibatis.type.Alias;
 @Alias("${entity}")
 @AllArgsConstructor
 @NoArgsConstructor
-public class ${entity} extends BaseModel<${entity}>  implements Serializable {
+public class ${entity} extends Model<${entity}>  implements Serializable {
 #if(${entitySerialVersionUID})
     private static final long serialVersionUID=1L;
 #end

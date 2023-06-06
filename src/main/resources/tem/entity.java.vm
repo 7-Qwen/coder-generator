@@ -1,6 +1,6 @@
 package ${package.Entity};
 //needUpdate
-import com.duqing.shopping_system.base.BaseModel;
+import com.wen.oawxapi.entity;
 
 #foreach($pkg in ${table.importPackages})
 import ${pkg};

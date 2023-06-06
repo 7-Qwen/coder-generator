@@ -5,8 +5,6 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
-import com.baomidou.mybatisplus.generator.config.po.TableField;
-import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 import java.io.File;
@@ -28,7 +26,7 @@ public class CodeGenerator {
 
         final GlobalConfig gc = new GlobalConfig();
         //needUpdate1
-        gc.setOutputDir("E:\\abc_project_workspace\\temp_workSpace\\shopping_system\\shopping_system\\src\\main\\java");//输出文件路径
+        gc.setOutputDir("W:\\workspace\\java\\oa-wx-api\\oa-wx\\src\\main\\java");//输出文件路径
         gc.setFileOverride(true);
         gc.setActiveRecord(false);// 不需要ActiveRecord特性的请改为false
         //gc.setEnableCache(false);// XML 二级缓存
@@ -53,10 +51,10 @@ public class CodeGenerator {
         final PackageConfig pc = new PackageConfig();
         //needUpdate2
         //设置包名
-        pc.setParent("com.duqing.shopping_system");
+        pc.setParent("com.wen.oawxapi");
 //        pc.setController("system.web");
 //        pc.setService("system.service");
-        pc.setServiceImpl("service.baseService");
+        pc.setServiceImpl("service.impl");
         pc.setMapper("dao");
         pc.setEntity("entity");
         mpg.setPackageInfo(pc);
@@ -70,7 +68,7 @@ public class CodeGenerator {
         //needUpdate3
         dsc.setUsername("root");
         dsc.setPassword("7wen");
-        dsc.setUrl("jdbc:mysql://120.25.154.0:3306/work_bishe_leijunjie?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai");
+        dsc.setUrl("jdbc:mysql://10.0.0.130:3306/oawx?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai");
         mpg.setDataSource(dsc);
  
         /**

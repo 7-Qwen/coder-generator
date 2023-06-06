@@ -1,2 +1,0 @@
-# coder-generator
-coder-generate

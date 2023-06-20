@@ -25,7 +25,7 @@ public class CodeGenerator {
          */
 
         final GlobalConfig gc = new GlobalConfig();
-        //needUpdate1
+        //needUpdate1 按需注释
         gc.setOutputDir("W:\\workspace\\java\\oa-wx-api\\oa-wx\\src\\main\\java");//输出文件路径
         gc.setFileOverride(true);
         gc.setActiveRecord(false);// 不需要ActiveRecord特性的请改为false
@@ -42,6 +42,7 @@ public class CodeGenerator {
         gc.setEntityName("%s");
         gc.setFileOverride(true);
         gc.setMapperName("%sMapper");
+        gc.setXmlName("%sMapper");
         gc.setIdType(IdType.ASSIGN_UUID);
         mpg.setGlobalConfig(gc);
  
@@ -52,11 +53,10 @@ public class CodeGenerator {
         //needUpdate2
         //设置包名
         pc.setParent("com.wen.oawxapi");
-//        pc.setController("system.web");
-//        pc.setService("system.service");
-        pc.setServiceImpl("service.impl");
+        pc.setServiceImpl("service.base");
         pc.setMapper("dao");
         pc.setEntity("entity");
+        pc.setXml("dao.xml");
         mpg.setPackageInfo(pc);
  
         /**
@@ -76,15 +76,19 @@ public class CodeGenerator {
          */
         TemplateConfig templateConfig = new TemplateConfig();
 
-        //needUpdate4
+        //needUpdate4 按需提取 如果不需要生成则将null反注释
         // 配置自定义输出模板
         //指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别，默认vm，xml不输出
         templateConfig.setEntity("tem/entity.java");
+//        templateConfig.setEntity(null);
         templateConfig.setService(null);
         templateConfig.setServiceImpl("tem/serviceImpl.java");
+//        templateConfig.setServiceImpl(null);
         templateConfig.setController(null);
         templateConfig.setMapper("tem/mapper.java");
-        templateConfig.setXml(null);
+//        templateConfig.setMapper(null);
+        templateConfig.setXml("tem/mapperXml.java");
+//        templateConfig.setXml(null);
         mpg.setTemplate(templateConfig);
  
         /**
